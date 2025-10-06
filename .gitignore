@@ -4,6 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+/target
+/.idea
+*.iml
+*.class
+.mvn/
+
 ### STS ###
 .apt_generated
 .classpath
@@ -16,7 +22,6 @@ target/
 ### IntelliJ IDEA ###
 .idea
 *.iws
-*.iml
 *.ipr
 
 ### NetBeans ###
