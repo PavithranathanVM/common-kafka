@@ -1,20 +1,17 @@
 package com.common.kafka.common_kafka.KafkaDTOs;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
-public class OrderCreatedEvent {
+public class OrderCreatedEvent extends BaseEvent {
 
     private UUID orderId;
     private UUID customerId;
@@ -22,4 +19,7 @@ public class OrderCreatedEvent {
     List<OrderItemEvent> orderItems;
     LocalDateTime createdAt;
 
+    public OrderCreatedEvent() {
+        setEventType("OrderCreatedEvent");
+    }
 }
