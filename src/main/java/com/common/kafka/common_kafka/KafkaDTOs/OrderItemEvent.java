@@ -1,23 +1,25 @@
 package com.common.kafka.common_kafka.KafkaDTOs;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
-public class OrderItemEvent {
+public class OrderItemEvent extends BaseEvent{
 
     private UUID productId;
     private String productName;
     private String productCategory;
     private BigDecimal quantity;
     private BigDecimal price;
+
+    public OrderItemEvent()
+    {
+        setEventType("OrderItemEvent");
+    }
 
 }
