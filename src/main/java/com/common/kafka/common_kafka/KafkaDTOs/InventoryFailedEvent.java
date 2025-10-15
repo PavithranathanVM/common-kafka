@@ -15,6 +15,8 @@ public class InventoryFailedEvent extends BaseEvent{
     private List<String> missingProducts;
     private LocalDateTime timeStamp;
 
+
+
     public  InventoryFailedEvent()
     {
         setEventType("InventoryFailedEvent");
